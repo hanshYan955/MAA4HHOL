@@ -1,0 +1,187 @@
+{
+    "$__mpe_config_每日奖励": {
+        "$__mpe_code": {
+            "prefix": "",
+            "savedViewport": {
+                "x": 9,
+                "y": -85,
+                "zoom": 0.76
+            },
+            "filename": "每日奖励",
+            "version": "v1.4.1"
+        }
+    },
+    "每日奖励-开始-找到每日奖励页面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "主页-奖励.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 2000,
+        "next": [
+            "每日签到-确认点开"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -364,
+                "y": 229
+            }
+        }
+    },
+    "每日签到-确认点开": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "升级"
+                ]
+            }
+        },
+        "next": [
+            "每日奖励-论道奖励"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 5,
+                "y": 344
+            }
+        }
+    },
+    "每日奖励-论道奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "每日奖励-论道页面.png"
+                ]
+            }
+        },
+        "post_delay": 0,
+        "next": [
+            "每日奖励-点击论道"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 354,
+                "y": 226
+            }
+        }
+    },
+    "每日奖励-点击论道": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    445,
+                    219,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "每日奖励-点击领取",
+            "每日奖励-已领取"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 677,
+                "y": 326
+            }
+        }
+    },
+    "每日奖励-点击领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "每日奖励-领取.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1500,
+        "next": [
+            "每日奖励-确认返回"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1051,
+                "y": 362
+            }
+        }
+    },
+    "每日奖励-已领取": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "每日奖励-已领取.png"
+                ]
+            }
+        },
+        "next": [
+            "每日奖励-返回首页确定"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 546,
+                "y": 682
+            }
+        }
+    },
+    "每日奖励-返回首页确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "返回"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 814,
+                "y": 739
+            }
+        }
+    },
+    "每日奖励-确认返回": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "每日奖励-已领取"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1447,
+                "y": 445
+            }
+        }
+    }
+}
