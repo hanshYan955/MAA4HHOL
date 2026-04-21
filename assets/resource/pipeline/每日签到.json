@@ -1,22 +1,22 @@
 {
-    "$__mpe_config_每日奖励": {
+    "$__mpe_config_每日签到": {
         "$__mpe_code": {
             "prefix": "",
             "savedViewport": {
-                "x": 9,
-                "y": -85,
-                "zoom": 0.76
+                "x": 701,
+                "y": -203,
+                "zoom": 1.52
             },
-            "filename": "每日奖励",
+            "filename": "每日签到",
             "version": "v1.4.1"
         }
     },
-    "每日奖励-开始-找到每日奖励页面": {
+    "每日签到-开始-找到每日签到页面": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "主页-奖励.png"
+                    "主页-签到.png"
                 ]
             }
         },
@@ -26,7 +26,7 @@
         },
         "post_delay": 2000,
         "next": [
-            "每日奖励-确认点开"
+            "每日签到-确认点开"
         ],
         "$__mpe_code": {
             "position": {
@@ -35,17 +35,18 @@
             }
         }
     },
-    "每日奖励-确认点开": {
+    "每日签到-确认点开": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "升级"
+                    "本回大赏"
                 ]
             }
         },
         "next": [
-            "每日奖励-论道奖励"
+            "每日签到-离开签到页面",
+            "每日签到-已领取"
         ],
         "$__mpe_code": {
             "position": {
@@ -54,18 +55,18 @@
             }
         }
     },
-    "每日奖励-论道奖励": {
+    "每日签到-离开签到页面": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "每日奖励-论道页面.png"
+                    "每日签到-领取.png"
                 ]
             }
         },
         "post_delay": 0,
         "next": [
-            "每日奖励-点击论道"
+            "每日签到-点击今日领取"
         ],
         "$__mpe_code": {
             "position": {
@@ -74,13 +75,13 @@
             }
         }
     },
-    "每日奖励-点击论道": {
+    "每日签到-点击今日领取": {
         "action": {
             "type": "Click",
             "param": {
                 "target": [
-                    445,
-                    219,
+                    501,
+                    715,
                     1,
                     1
                 ]
@@ -88,8 +89,7 @@
         },
         "post_delay": 1500,
         "next": [
-            "每日奖励-点击领取",
-            "每日奖励-已领取"
+            "每日签到-确定"
         ],
         "$__mpe_code": {
             "position": {
@@ -98,12 +98,12 @@
             }
         }
     },
-    "每日奖励-点击领取": {
+    "每日签到-确定": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "每日奖励-领取.png"
+                    "每日签到-确定.png"
                 ]
             }
         },
@@ -111,9 +111,8 @@
             "type": "Click",
             "param": {}
         },
-        "post_delay": 1500,
         "next": [
-            "每日奖励-确认返回"
+            "每日签到-已领取"
         ],
         "$__mpe_code": {
             "position": {
@@ -122,17 +121,17 @@
             }
         }
     },
-    "每日奖励-已领取": {
+    "每日签到-已领取": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "每日奖励-已领取.png"
+                    "每日签到-已领取.png"
                 ]
             }
         },
         "next": [
-            "每日奖励-返回首页确定"
+            "每日签到-返回首页确定"
         ],
         "$__mpe_code": {
             "position": {
@@ -141,12 +140,12 @@
             }
         }
     },
-    "每日奖励-返回首页确定": {
+    "每日签到-返回首页确定": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "返回"
+                    "确定"
                 ]
             }
         },
@@ -158,29 +157,6 @@
             "position": {
                 "x": 814,
                 "y": 739
-            }
-        }
-    },
-    "每日奖励-确认返回": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "确认"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {}
-        },
-        "next": [
-            "每日奖励-已领取"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1447,
-                "y": 445
             }
         }
     }
